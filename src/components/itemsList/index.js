@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useState } from "react";
 import styles from "./itemsList.module.scss";
 import cx from "classnames";
 
@@ -29,7 +29,7 @@ const items = [
   totam veniam. `
 ];
 
-function ItemsList() {
+function ItemList() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   const listClass = cx(styles.list, {
@@ -37,7 +37,7 @@ function ItemsList() {
   });
 
   return (
-    <Fragment>
+    <div className={styles.wrapper}>
       <button
         className={cx("button is-dark", styles.collapseButton)}
         onClick={() => setIsCollapsed(!isCollapsed)}
@@ -52,8 +52,8 @@ function ItemsList() {
           </li>
         ))}
       </ul>
-    </Fragment>
+    </div>
   );
 }
 
-export default ItemsList;
+export default ItemList;
