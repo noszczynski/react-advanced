@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./itemsList.module.scss";
 import cx from "classnames";
+import withCollapse from "../../hoc/withCollapse";
+import PropTypes from "prop-types";
 
 const items = [
   ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -29,18 +31,16 @@ const items = [
   totam veniam. `
 ];
 
-function ItemList() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
+const ItemList = ({ isCollapsed, setCollapsed }) => {
   const listClass = cx(styles.list, {
     [styles.isCollapsed]: isCollapsed
   });
 
   return (
-    <div className={styles.wrapper}>
+    <div>
       <button
         className={cx("button is-dark", styles.collapseButton)}
-        onClick={() => setIsCollapsed(!isCollapsed)}
+        onClick={() => setCollapsed(!isCollapsed)}
       >
         Collapse
       </button>
@@ -54,6 +54,15 @@ function ItemList() {
       </ul>
     </div>
   );
-}
+};
 
-export default ItemList;
+ItemList.propTypes = {
+  isCollapsed: PropTypes.bool,
+  setCollapsed: PropTypes.func.isRequired
+};
+
+ItemList.defaultProps = {
+  isCollapsed: false
+};
+
+export default withCollapse(ItemList);

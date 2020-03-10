@@ -1,13 +1,15 @@
 import React, { Fragment } from "react";
 import Header from "../components/Header";
+import Columns from "../components/Columns/Columns";
+import PageTemplate from "../Templates/PageTemplate";
 
-function Tips() {
-  return (
-    <Fragment>
-      <Header />
-      <h1 className={`title is-1`}>Tips</h1>
-    </Fragment>
-  );
-}
+const Tips = () => (
+  <Fragment>
+    <Header />
+    <PageTemplate title={`Tips`}>
+      <Columns />
+    </PageTemplate>
+  </Fragment>
+);
 
 export default Tips;

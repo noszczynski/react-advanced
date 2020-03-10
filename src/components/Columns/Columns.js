@@ -1,0 +1,62 @@
+import React from "react";
+import styles from "./columns.module.scss";
+import cx from "classnames";
+import withCollapse from "../../hoc/withCollapse";
+import PropTypes from "prop-types";
+import withAuth from "../../hoc/withAuth";
+import { compose } from "recompose";
+
+const items = [
+  `Lorem ipsum dolor sit amet.`,
+  `Lorem ipsum dolor sit amet teo novum greta`,
+  `Lorem ipsum dolor sit amet.`,
+  `Lorem ipsum dolor sit amet. Maxim garde mate.`
+];
+
+const Columns = ({
+  isCollapsed,
+  setCollapsed,
+  isAuthorised,
+  setAuthorised
+}) => {
+  const listClass = cx(styles.list, {
+    [styles.isCollapsed]: isCollapsed,
+    [styles.isAuthorised]: isAuthorised
+  });
+
+  return (
+    <div>
+      <button
+        className={cx("button is-dark", styles.collapseButton)}
+        onClick={() => setCollapsed(!isCollapsed)}
+      >
+        Collapse
+      </button>
+      <button
+        className={cx("button is-primary", styles.collapseButton)}
+        onClick={() => setAuthorised(!isAuthorised)}
+      >
+        login
+      </button>
+      <ul className={listClass}>
+        {items.map((content, i) => (
+          <li className={`notification is-primary`} key={i}>
+            {content}
+            <button className={`delete`} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+Columns.propTypes = {
+  isCollapsed: PropTypes.bool,
+  setCollapsed: PropTypes.func.isRequired
+};
+
+Columns.defaultProps = {
+  isCollapsed: false
+};
+
+export default compose(withAuth, withCollapse)(Columns);
