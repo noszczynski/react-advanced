@@ -1,13 +1,14 @@
-import React, { Fragment } from "react";
+import React from "react";
 import Header from "../components/Header";
+import PageTemplate from "../Templates/PageTemplate";
 
-function Patterns() {
-  return (
-    <Fragment>
-      <Header />
-      <h1 className={`title is-1`}>Patterns</h1>
-    </Fragment>
-  );
-}
+const Patterns = () => (
+  <div>
+    <Header />
+    <PageTemplate title={`Patterns`}>
+      <h1>Dupa</h1>
+    </PageTemplate>
+  </div>
+);
 
 export default Patterns;

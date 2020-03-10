@@ -1,0 +1,30 @@
+.list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  transition: transform .4s;
+  transform: translateX(0);
+  & > li {
+    transition: background-color .2s;
+  }
+
+  &.isCollapsed {
+    overflow: hidden;
+    transform: translateX(-200%);
+  }
+
+  &.isAuthorised {
+    & > li {
+      background-color: red;
+    }
+  }
+}
+
+.collapseButton{
+  margin-bottom: 20px;
+  margin-right: 10px;
+}
+

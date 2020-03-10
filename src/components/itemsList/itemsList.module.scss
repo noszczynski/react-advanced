@@ -1,18 +1,18 @@
-.wrapper {
-  width: 80%;
-  margin: 0 auto;
-}
 .list {
   padding: 0;
   margin: 0;
   list-style: none;
+  transform: translateY(0);
+  transition: transform .4s;
+
+  &.isCollapsed {
+    overflow: hidden;
+    transform: translateY(-200%);
+  }
 }
 
 .collapseButton{
   margin-bottom: 20px;
-}
-
-.isCollapsed {
-  max-height: 0;
-  overflow: hidden;
+  display: block;
+  z-index: 1;
 }
