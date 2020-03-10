@@ -1,10 +1,7 @@
 import React from "react";
 import styles from "./columns.module.scss";
 import cx from "classnames";
-import withCollapse from "../../hoc/withCollapse";
-import PropTypes from "prop-types";
 import withAuth from "../../hoc/withAuth";
-import { compose } from "recompose";
 
 const items = [
   `Lorem ipsum dolor sit amet.`,
@@ -14,10 +11,10 @@ const items = [
 ];
 
 const Columns = ({
-  isCollapsed,
-  setCollapsed,
   isAuthorised,
-  setAuthorised
+  setAuthorised,
+  isCollapsed,
+  setCollapsed
 }) => {
   const listClass = cx(styles.list, {
     [styles.isCollapsed]: isCollapsed,
@@ -50,13 +47,4 @@ const Columns = ({
   );
 };
 
-Columns.propTypes = {
-  isCollapsed: PropTypes.bool,
-  setCollapsed: PropTypes.func.isRequired
-};
-
-Columns.defaultProps = {
-  isCollapsed: false
-};
-
-export default compose(withAuth, withCollapse)(Columns);
+export default withAuth(Columns);

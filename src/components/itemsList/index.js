@@ -1,8 +1,7 @@
 import React from "react";
 import styles from "./itemsList.module.scss";
 import cx from "classnames";
-import withCollapse from "../../hoc/withCollapse";
-import PropTypes from "prop-types";
+import Collapse from "../../providers/Collapse";
 
 const items = [
   ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
@@ -31,38 +30,43 @@ const items = [
   totam veniam. `
 ];
 
-const ItemList = ({ isCollapsed, setCollapsed }) => {
-  const listClass = cx(styles.list, {
-    [styles.isCollapsed]: isCollapsed
-  });
+const ItemList = () => {
+  const listClass = isCollapsed =>
+    cx(styles.list, {
+      [styles.isCollapsed]: isCollapsed
+    });
 
   return (
-    <div>
-      <button
-        className={cx("button is-dark", styles.collapseButton)}
-        onClick={() => setCollapsed(!isCollapsed)}
-      >
-        Collapse
-      </button>
-      <ul className={listClass}>
-        {items.map((content, i) => (
-          <li className={`notification is-primary`} key={i}>
-            <button className={`delete`} />
-            {content}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Collapse
+      render={({ isCollapsed, setCollapsed }) => (
+        <div>
+          <button
+            className={cx("button is-dark", styles.collapseButton)}
+            onClick={() => setCollapsed(!isCollapsed)}
+          >
+            Collapse
+          </button>
+          <ul className={listClass(isCollapsed)}>
+            {items.map((content, i) => (
+              <li className={`notification is-primary`} key={i}>
+                <button className={`delete`} />
+                {content}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    />
   );
 };
 
-ItemList.propTypes = {
-  isCollapsed: PropTypes.bool,
-  setCollapsed: PropTypes.func.isRequired
-};
+// ItemList.propTypes = {
+//   isCollapsed: PropTypes.bool,
+//   setCollapsed: PropTypes.func.isRequired
+// };
+//
+// ItemList.defaultProps = {
+//   isCollapsed: false
+// };
 
-ItemList.defaultProps = {
-  isCollapsed: false
-};
-
-export default withCollapse(ItemList);
+export default ItemList;
