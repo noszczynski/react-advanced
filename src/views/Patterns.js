@@ -1,12 +1,59 @@
 import React from "react";
 import Header from "../components/Header";
 import PageTemplate from "../Templates/PageTemplate";
+import Downshift from "downshift";
+
+const ITEMS_OPTIONS = [
+  { value: "apple" },
+  { value: "pear" },
+  { value: "orange" },
+  { value: "grape" },
+  { value: "banana" }
+];
 
 const Patterns = () => (
   <div>
     <Header />
     <PageTemplate title={`Patterns`}>
-      <h1>Dupa</h1>
+      <Downshift>
+        {({
+          getInputProps,
+          isOpen,
+          inputValue,
+          getMenuProps,
+          getItemProps,
+          selectedItem
+        }) => (
+          <div className={`dropdown ${isOpen ? "is-active" : ""}`}>
+            <input
+              className={`input`}
+              type="text"
+              placeholder="Text input"
+              {...getInputProps()}
+            />
+            <div className={`dropdown-menu`}>
+              <div className={`dropdown-content`} {...getMenuProps()}>
+                {ITEMS_OPTIONS.filter(item =>
+                  item.value.includes(inputValue)
+                ).map(({ value }, index) => (
+                  <button
+                    {...getItemProps({
+                      key: value,
+                      index,
+                      item: value
+                    })}
+                    className={`dropdown-item button is-white ${
+                      value === selectedItem ? "is-active" : ""
+                    }`}
+                  >
+                    {value}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        )}
+      </Downshift>
     </PageTemplate>
   </div>
 );
