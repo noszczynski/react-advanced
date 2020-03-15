@@ -97,7 +97,7 @@ const Components = () => {
           ) : originalItemsList.length > 0 ? (
             <p className={`is-large`}>Add something</p>
           ) : (
-            <button className={`button is-info is-loading`}></button>
+            <button className={`button is-info is-loading`} />
           )}
         </div>
       </PageTemplate>
