@@ -1,16 +1,28 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useContext, useRef, useState } from "react";
 import Header from "../components/Header";
 import { useDetectOutsideClick } from "../Hooks/useDetectOutsideClick";
 import PageTemplate from "../Templates/PageTemplate";
 
+const Context = React.createContext();
+
+const User = () => {
+  const context = useContext(Context);
+  return <p>My name is: {context.name}</p>;
+};
+
 const Users = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const modalRef = useRef(null);
+
   useDetectOutsideClick(modalRef, setModalOpen);
 
   return (
     <Fragment>
       <Header />
+      <Context.Provider value={{ name: "Adam" }}>
+        <h2 className={`title is-3`}>Users:</h2>
+        <User />
+      </Context.Provider>
       <PageTemplate title={`Users`}>
         <button
           className="button is-primary"

@@ -4,7 +4,15 @@ import "bulma";
 import cx from "classnames";
 import styles from "./Navigation.module.scss";
 
-const NAV_ITEMS = ["docs", "tips", "patterns", "components", "atoms", "users"];
+const NAV_ITEMS = [
+  "docs",
+  "tips",
+  "patterns",
+  "components",
+  "atoms",
+  "users",
+  "contact"
+];
 
 function Navigation() {
   return (
