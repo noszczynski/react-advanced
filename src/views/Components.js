@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useReducer, useState } from "react";
-import Header from "../components/Header";
-import PageTemplate from "../Templates/PageTemplate";
+import Header from "../components/Header/Header";
+import PageTemplate from "../templates/PageTemplate";
 import cx from "classnames";
 import axios from "axios";
 

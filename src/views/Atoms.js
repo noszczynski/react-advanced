@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
-import Header from "../components/Header";
-import PageTemplate from "../Templates/PageTemplate";
+import Header from "../components/Header/Header";
+import PageTemplate from "../templates/PageTemplate";
 import Animate from "../components/Animate/Animate";
 
 const Atoms = () => {

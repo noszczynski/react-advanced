@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import PageTemplate from "../../Templates/PageTemplate";
+import PageTemplate from "../../templates/PageTemplate";
 
 const MultiStepContext = React.createContext({
   currentPage: 0,

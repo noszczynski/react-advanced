@@ -1,7 +1,7 @@
 import React from "react";
-import ItemList from "../components/itemsList";
-import Header from "../components/Header";
-import PageTemplate from "../Templates/PageTemplate";
+import Header from "../components/Header/Header";
+import PageTemplate from "../templates/PageTemplate";
+import ItemList from "../components/ItemsList/ItemsList";
 
 const Docs = () => (
   <div>

@@ -1,6 +1,6 @@
 import React from "react";
-import Header from "../components/Header";
-import PageTemplate from "../Templates/PageTemplate";
+import Header from "../components/Header/Header";
+import PageTemplate from "../templates/PageTemplate";
 import Downshift from "downshift";
 
 const ITEMS_OPTIONS = [

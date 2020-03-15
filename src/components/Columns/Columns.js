@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./columns.module.scss";
+import styles from "./Columns.module.scss";
 import cx from "classnames";
 import withAuth from "../../hoc/withAuth";
 
