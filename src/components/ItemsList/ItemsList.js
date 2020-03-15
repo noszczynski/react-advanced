@@ -1,7 +1,7 @@
 import React from "react";
-import styles from "./itemsList.module.scss";
 import cx from "classnames";
 import Collapse from "../../providers/Collapse";
+import styles from "./ItemsList.module.scss";
 
 const items = [
   ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 

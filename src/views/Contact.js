@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { Controls, MultiStep, Page } from "../components/Multistep/Multistep";
-import Header from "../components/Header";
+import Header from "../components/Header/Header";
 
 //TODO save values
 const PAGES = [

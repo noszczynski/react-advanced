@@ -1,7 +1,7 @@
 import React, { Fragment, useContext, useRef, useState } from "react";
-import Header from "../components/Header";
-import { useDetectOutsideClick } from "../Hooks/useDetectOutsideClick";
-import PageTemplate from "../Templates/PageTemplate";
+import Header from "../components/Header/Header";
+import { useDetectOutsideClick } from "../hooks/useDetectOutsideClick";
+import PageTemplate from "../templates/PageTemplate";
 
 const Context = React.createContext();
 

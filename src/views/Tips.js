@@ -1,7 +1,7 @@
 import React, { Fragment, useRef, useState } from "react";
-import Header from "../components/Header";
-import PageTemplate from "../Templates/PageTemplate";
-import { useDetectOutsideClick } from "../Hooks/useDetectOutsideClick";
+import Header from "../components/Header/Header";
+import PageTemplate from "../templates/PageTemplate";
+import { useDetectOutsideClick } from "../hooks/useDetectOutsideClick";
 
 const Tips = () => {
   const refInput = useRef(null);
