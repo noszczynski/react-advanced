@@ -3,15 +3,15 @@ import Header from "../components/Header/Header";
 import PageTemplate from "../templates/PageTemplate";
 import Animate from "../components/Animate/Animate";
 
-const Atoms = () => {
+const GsapAnimation = () => {
   return (
     <Fragment>
       <Header />
-      <PageTemplate title={`Atoms`}>
+      <PageTemplate title={`GSAP`}>
         <Animate />
       </PageTemplate>
     </Fragment>
   );
 };
 
-export default Atoms;
+export default GsapAnimation;

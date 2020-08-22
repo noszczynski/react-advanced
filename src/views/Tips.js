@@ -1,13 +1,11 @@
 import React, { Fragment, useRef, useState } from "react";
 import Header from "../components/Header/Header";
 import PageTemplate from "../templates/PageTemplate";
-import { useDetectOutsideClick } from "../hooks/useDetectOutsideClick";
 
 const Tips = () => {
   const refInput = useRef(null);
   const refTooltip = useRef(null);
   const [isTooltipOpen, setTooltipOpen] = useState(false);
-  useDetectOutsideClick(refTooltip, setTooltipOpen);
 
   const fucusInput = () => {
     refInput.current.focus();

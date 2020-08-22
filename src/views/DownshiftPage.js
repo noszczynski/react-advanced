@@ -11,7 +11,7 @@ const ITEMS_OPTIONS = [
   { value: "banana" }
 ];
 
-const Patterns = () => (
+const DownshiftPage = () => (
   <div>
     <Header />
     <PageTemplate title={`Patterns`}>
@@ -58,4 +58,4 @@ const Patterns = () => (
   </div>
 );
 
-export default Patterns;
+export default DownshiftPage;

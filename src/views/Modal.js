@@ -1,6 +1,5 @@
 import React, { Fragment, useContext, useRef, useState } from "react";
 import Header from "../components/Header/Header";
-import { useDetectOutsideClick } from "../hooks/useDetectOutsideClick";
 import PageTemplate from "../templates/PageTemplate";
 
 const Context = React.createContext();
@@ -10,20 +9,18 @@ const User = () => {
   return <p>My name is: {context.name}</p>;
 };
 
-const Users = () => {
+const Modal = () => {
   const [isModalOpen, setModalOpen] = useState(false);
   const modalRef = useRef(null);
-
-  useDetectOutsideClick(modalRef, setModalOpen);
 
   return (
     <Fragment>
       <Header />
-      <Context.Provider value={{ name: "Adam" }}>
-        <h2 className={`title is-3`}>Users:</h2>
-        <User />
-      </Context.Provider>
       <PageTemplate title={`Users`}>
+        <Context.Provider value={{ name: "Adam" }}>
+          <User />
+        </Context.Provider>
+
         <button
           className="button is-primary"
           aria-label="open"
@@ -62,4 +59,4 @@ const Users = () => {
   );
 };
 
-export default Users;
+export default Modal;

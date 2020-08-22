@@ -4,27 +4,27 @@ import Collapse from "../../providers/Collapse";
 import styles from "./ItemsList.module.scss";
 
 const items = [
-  ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
   A accusantium ad aliquam corporis ex explicabo facere id inventore 
   ipsum laborum nam quas quod ratione rerum saepe sapiente similique, 
   totam veniam. `,
-  ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
   A accusantium ad aliquam corporis ex explicabo facere id inventore 
   ipsum laborum nam quas quod ratione rerum saepe sapiente similique, 
   totam veniam. `,
-  ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
   A accusantium ad aliquam corporis ex explicabo facere id inventore 
   ipsum laborum nam quas quod ratione rerum saepe sapiente similique, 
   totam veniam. `,
-  ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
   A accusantium ad aliquam corporis ex explicabo facere id inventore 
   ipsum laborum nam quas quod ratione rerum saepe sapiente similique, 
   totam veniam. `,
-  ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
   A accusantium ad aliquam corporis ex explicabo facere id inventore 
   ipsum laborum nam quas quod ratione rerum saepe sapiente similique, 
   totam veniam. `,
-  ` Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+  `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
   A accusantium ad aliquam corporis ex explicabo facere id inventore 
   ipsum laborum nam quas quod ratione rerum saepe sapiente similique, 
   totam veniam. `

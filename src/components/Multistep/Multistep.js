@@ -71,7 +71,7 @@ const MultiStep = ({ children }) => {
         childrenLength: children.length
       }}
     >
-      <PageTemplate title={`Contact`}>
+      <PageTemplate title={`Multi page form`}>
         <div>{children}</div>
       </PageTemplate>
     </MultiStepContext.Provider>

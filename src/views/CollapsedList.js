@@ -3,13 +3,13 @@ import Header from "../components/Header/Header";
 import PageTemplate from "../templates/PageTemplate";
 import ItemList from "../components/ItemsList/ItemsList";
 
-const Docs = () => (
+const CollapsedList = () => (
   <div>
     <Header />
-    <PageTemplate title={`Docs`}>
+    <PageTemplate title={`Collapsed list`}>
       <ItemList />
     </PageTemplate>
   </div>
 );
 
-export default Docs;
+export default CollapsedList;

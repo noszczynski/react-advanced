@@ -4,7 +4,7 @@ import PageTemplate from "../templates/PageTemplate";
 import cx from "classnames";
 import axios from "axios";
 
-const Components = () => {
+const TodoList = () => {
   const [inputsContent, setInputContent] = useReducer(
     (state, newState) => ({ ...state, ...newState }),
     {
@@ -35,21 +35,24 @@ const Components = () => {
     setItemsList(newItemsList);
   };
 
+  const fetchData = async () => {
+    const response = await axios.get(
+      "http://www.mocky.io/v2/5e6d5a002e000083000eebbc?mocky-delay=500ms"
+    );
+    return response;
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios.get(
-        "http://www.mocky.io/v2/5e6d5a002e000083000eebbc?mocky-delay=500ms"
-      );
+    fetchData().then(response => {
       setItemsList(response.data);
       setOriginalItemsList(response.data);
-    };
-    fetchData();
+    });
   }, []);
 
   return (
     <Fragment>
       <Header />
-      <PageTemplate>
+      <PageTemplate title={"TODO List"}>
         <div>
           <label htmlFor="search">Search items by content</label>
           <input
@@ -72,12 +75,16 @@ const Components = () => {
             value={inputsContent.itemInputContent}
             onChange={handleInputChange}
           />
+          <br />
+          <br />
           <button
             onClick={addNewItem}
             className={cx("button is-warning is-large")}
           >
             Add item
           </button>
+          <br />
+          <br />
           {itemsList.length > 0 ? (
             itemsList
               .filter(item =>
@@ -105,4 +112,4 @@ const Components = () => {
   );
 };
 
-export default Components;
+export default TodoList;

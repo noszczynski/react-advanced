@@ -5,13 +5,13 @@ import cx from "classnames";
 import styles from "./Navigation.module.scss";
 
 const NAV_ITEMS = [
-  "docs",
-  "tips",
-  "patterns",
-  "components",
-  "atoms",
-  "users",
-  "contact"
+  { label: "Collapsed list", value: "collapsed" },
+  { label: "Input focus", value: "input" },
+  { label: "Downshift", value: "downshift" },
+  { label: "Todo", value: "todo" },
+  { label: "Gsap", value: "gsap" },
+  { label: "Modal", value: "modal" },
+  { label: "Multi page form", value: "form" }
 ];
 
 function Navigation() {
@@ -21,10 +21,10 @@ function Navigation() {
       <h2 className={`title is-5 has-text-white`}>kurs zaawansowany</h2>
       <div className={`navbar-menu`}>
         <ul className={`navbar-start`}>
-          {NAV_ITEMS.map(item => (
-            <li className={`navbar-item`} key={item}>
-              <NavLink to={`/${item}`} className={`has-text-white`}>
-                {item}
+          {NAV_ITEMS.map(({ label, value }) => (
+            <li className={`navbar-item`} key={value}>
+              <NavLink to={`/${value}`} className={`has-text-white`}>
+                {label}
               </NavLink>
             </li>
           ))}
