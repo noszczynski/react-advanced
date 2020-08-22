@@ -60,13 +60,4 @@ const ItemList = () => {
   );
 };
 
-// ItemList.propTypes = {
-//   isCollapsed: PropTypes.bool,
-//   setCollapsed: PropTypes.func.isRequired
-// };
-//
-// ItemList.defaultProps = {
-//   isCollapsed: false
-// };
-
 export default ItemList;

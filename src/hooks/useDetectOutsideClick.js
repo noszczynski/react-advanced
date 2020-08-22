@@ -1,4 +1,4 @@
-import {useEffect} from "react";
+import { useEffect } from "react";
 
 export const useDetectOutsideClick = (ref, handler) => {
   const listener = e => {
@@ -14,5 +14,5 @@ export const useDetectOutsideClick = (ref, handler) => {
     return () => {
       document.removeEventListener("mousedown", listener);
     };
-  }, []);
+  }, [listener]);
 };
