@@ -1,10 +1,6 @@
 import { Component } from "react";
 
 class Collapse extends Component {
-  // static propTypes = {
-  //   WrappedComponent: PropTypes.node
-  // };
-
   state = {
     isCollapsed: false
   };
@@ -23,18 +19,6 @@ class Collapse extends Component {
 
     return this.props.render(renderProps);
   }
-
-  // render() {
-  //   const { isCollapsed } = this.state;
-  //
-  //   return (
-  //     <WrappedComponent
-  //       isCollapsed={isCollapsed}
-  //       setCollapsed={this.toggle}
-  //       {...this.props}
-  //     />
-  //   );
-  // }
 }
 
 export default Collapse;
